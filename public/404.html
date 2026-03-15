@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Rinse&Go Marketing Lab</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // Converts path to hash-based route for HashRouter
+      var path = window.location.pathname;
+      var repo = '/rinsego-marketing-lab';
+      if (path.startsWith(repo)) {
+        path = path.slice(repo.length);
+      }
+      if (path && path !== '/') {
+        window.location.replace(repo + '/#' + path);
+      } else {
+        window.location.replace(repo + '/');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
