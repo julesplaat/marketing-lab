@@ -6,8 +6,8 @@ import {
   FormField, Input, Textarea, MultiSelect, Modal,
 } from '../components/Shared';
 import {
-  FUNNEL_OPTIONS, CHANNEL_OPTIONS, TEST_TYPE_OPTIONS, BUYER_ROLE_OPTIONS,
-  PROBLEM_TAG_OPTIONS, APPLY_TO_OPTIONS, CONFIDENCE_OPTIONS,
+FUNNEL_OPTIONS, DEFAULT_CHANNEL_OPTIONS, DEFAULT_TEST_TYPE_OPTIONS, DEFAULT_BUYER_ROLE_OPTIONS,
+DEFAULT_PROBLEM_TAG_OPTIONS, APPLY_TO_OPTIONS, CONFIDENCE_OPTIONS,
 } from '../data/defaults';
 import { formatDate, generateId } from '../lib/helpers';
 import { BookOpen, Search, X, Plus, Edit, Trash2, ExternalLink, Filter } from 'lucide-react';
@@ -161,15 +161,15 @@ export default function Learnings() {
             </div>
             <div className="filter-item">
               <label>Kanaal</label>
-              <Select value={filters.channel} onChange={(v) => setFilters({ ...filters, channel: v })} options={CHANNEL_OPTIONS} placeholder="Alle" />
+              <Select value={filters.channel} onChange={(v) => setFilters({ ...filters, channel: v })} options={DEFAULT_CHANNEL_OPTIONS} placeholder="Alle" />
             </div>
             <div className="filter-item">
               <label>Testtype</label>
-              <Select value={filters.testType} onChange={(v) => setFilters({ ...filters, testType: v })} options={TEST_TYPE_OPTIONS} placeholder="Alle" />
+              <Select value={filters.testType} onChange={(v) => setFilters({ ...filters, testType: v })} options={DEFAULT_TEST_TYPE_OPTIONS} placeholder="Alle" />
             </div>
             <div className="filter-item">
               <label>Buyer role</label>
-              <Select value={filters.buyerRole} onChange={(v) => setFilters({ ...filters, buyerRole: v })} options={BUYER_ROLE_OPTIONS} placeholder="Alle" />
+              <Select value={filters.buyerRole} onChange={(v) => setFilters({ ...filters, buyerRole: v })} options={DEFAULT_BUYER_ROLE_OPTIONS} placeholder="Alle" />
             </div>
             <div className="filter-item">
               <label>Vertrouwen</label>
@@ -282,10 +282,10 @@ function LearningModal({ learning, experiments, onSave, onClose }) {
           <Select value={form.funnel} onChange={(v) => update('funnel', v)} options={FUNNEL_OPTIONS} />
         </FormField>
         <FormField label="Kanaal">
-          <Select value={form.channel} onChange={(v) => update('channel', v)} options={CHANNEL_OPTIONS} />
+          <Select value={form.channel} onChange={(v) => update('channel', v)} options={DEFAULT_CHANNEL_OPTIONS} />
         </FormField>
         <FormField label="Testtype">
-          <Select value={form.testType} onChange={(v) => update('testType', v)} options={TEST_TYPE_OPTIONS} />
+          <Select value={form.testType} onChange={(v) => update('testType', v)} options={DEFAULT_TEST_TYPE_OPTIONS} />
         </FormField>
         <FormField label="Vertrouwen">
           <Select value={form.confidence} onChange={(v) => update('confidence', v)} options={CONFIDENCE_OPTIONS} />
